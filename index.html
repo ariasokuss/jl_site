@@ -159,6 +159,15 @@ caption { caption-side: top; text-align: left; font-size: 13px; color: var(--mut
 
 /* снимки экрана */
 .hero-shot { position: relative; border-radius: var(--radius); overflow: hidden; box-shadow: 0 10px 40px rgba(8,24,46,.25); background: #111; }
+.hero-shot img { width: 100%; height: auto; }
+.shot-hint { display: none; }
+@media (max-width: 640px) {
+  .hero { background-image: none; }
+  .hero h1 { font-size: 9.6vw; letter-spacing: .06em; }
+  .logo-word { letter-spacing: .14em; }
+  .hero-shot .pin { display: none; }
+  .shot-hint { display: block; font-size: 13px; color: var(--muted); margin-top: -4px; }
+}
 .pin { position: absolute; width: 30px; height: 30px; margin: -15px 0 0 -15px; border-radius: 50%; background: var(--spark); color: #08182e; font: 800 15px/30px var(--font); text-align: center; box-shadow: 0 0 0 3px #08182e, 0 4px 14px rgba(0,0,0,.4); }
 .legend-steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; counter-reset: s; }
 .legend-steps li { counter-increment: s; background: var(--bg); border-radius: var(--radius); padding: 12px 14px 14px; font-size: 14.5px; line-height: 1.45; min-width: 0; }
@@ -431,13 +440,14 @@ figure .frame img, .hero-shot img { transition: transform .7s cubic-bezier(.2,.8
   <div class="sub">
     <h3>Главный экран: суббота, 8 ноября</h3>
     <div class="hero-shot">
-      <img src="img/day.jpg" width="1800" height="1013" alt="Главный экран сервиса 8 ноября 2025: список «Требует внимания», карта Москвы с маршрутами, профиль сети и поправки">
+      <a href="img/day.jpg" target="_blank" rel="noopener"><img src="img/day.jpg" width="1800" height="1013" alt="Главный экран сервиса 8 ноября 2025: список «Требует внимания», карта Москвы с маршрутами, профиль сети и поправки"></a>
       <span class="pin" style="--i:0;left:3.5%;top:16%" aria-hidden="true">1</span>
       <span class="pin" style="--i:1;left:25%;top:16%" aria-hidden="true">2</span>
       <span class="pin" style="--i:2;left:78.5%;top:16%" aria-hidden="true">3</span>
       <span class="pin" style="--i:3;left:78.5%;top:70%" aria-hidden="true">4</span>
       <span class="pin" style="--i:4;left:69%;top:5.5%" aria-hidden="true">5</span>
     </div>
+    <p class="shot-hint">Нажмите на снимок, чтобы открыть его крупно. Блоки экрана — по порядку ниже.</p>
     <ol class="legend-steps">
       <li><b>Требует внимания</b>Отклонения от обычного уровня в обе стороны: провал маршрута 50 на 94% с причиной и ссылкой на пост Дептранса.</li>
       <li><b>Карта Москвы</b>9 маршрутов из OpenStreetMap. Размер остановки — прогноз посадок в выбранный час, ▶ проигрывает сутки.</li>
